@@ -1,0 +1,42 @@
+.contact-country-image,
+.contact-country-image-active {
+  object-fit: contain;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-100%);
+  width: 90%;
+  border-radius: 1em;
+  transition: all 200ms ease-in-out;
+}
+
+.contact-image-container,
+.contact-image-container-active {
+  position: relative;
+  border: 1px solid #2ee389;
+  border-radius: 1em;
+  height: 300px;
+  background-color: #2ee389;
+  filter: grayscale(100%);
+  transition: all 300ms ease-in-out;
+  cursor: pointer;
+}
+
+.contact-image-container-active {
+  filter: grayscale(0%);
+}
+
+.contact-country-image-active {
+  width: 100%;
+}
+@media screen and (max-width: 768px) {
+  .contact-country-image,
+  .contact-country-image-active {
+    width: 200px;
+    position: relative;
+  }
+  .contact-country-image,
+  .contact-country-image-active {
+    width: 200px;
+  }
+}

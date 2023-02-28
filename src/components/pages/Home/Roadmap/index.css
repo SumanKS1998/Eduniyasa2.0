@@ -1,0 +1,13 @@
+.container:hover .number-container,
+.container:hover {
+  background-color: #2ee389 !important;
+  cursor: pointer !important;
+  color: #fff !important;
+  transition: all 200ms ease-in-out;
+  border: 1px solid #00b85c;
+}
+
+.container:hover .number-container {
+  border: 1px solid #fff;
+  background: #ffffff33 !important;
+}

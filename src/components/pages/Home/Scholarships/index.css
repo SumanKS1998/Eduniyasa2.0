@@ -1,0 +1,38 @@
+.scholarship-usa-normal,
+.scholarship-uk-normal,
+.scholarship-aus-normal {
+  position: absolute;
+  bottom: 0;
+}
+
+.scholarship-usa {
+  position: absolute;
+
+  animation: forwards scholarship-usa 0.5s ease-in-out;
+}
+
+.scholarship-uk {
+  position: absolute;
+
+  animation: forwards scholarship-uk 0.5s ease-in-out;
+}
+.scholarship-aus {
+  position: absolute;
+
+  animation: forwards scholarship-aus 0.5s ease-in-out;
+}
+@keyframes scholarship-usa {
+  100% {
+    transform: rotate(-20deg) translate(-20%, -20%);
+  }
+}
+@keyframes scholarship-uk {
+  100% {
+    transform: rotate(20deg) translate(20%, 20%);
+  }
+}
+@keyframes scholarship-aus {
+  100% {
+    transform: rotate(-20deg) translate(-50%, 50%);
+  }
+}
