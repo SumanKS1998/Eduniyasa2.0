@@ -1,29 +1,20 @@
 import React from "react";
-import { Grid, Box, Stack } from "@mui/material";
+import { Grid, Box, Stack, Container } from "@mui/material";
 import { StyledGraphy } from "../../../../styles/muiStyledComponents";
-import { roadmapStar, title } from "../../../../assets/images";
+import { LogoText, roadmapStar } from "../../../../assets/images";
 import "./index.css";
 import RoadmapItem from "../../../common/Roadmap";
 
 const Roadmap = () => {
   return (
-    <Stack height="100vh">
+    <Stack height="100vh" component={Container}>
       <Grid container spacing={2}>
         <Grid item xs={12} md={6}>
           <StyledGraphy variant="h2" fontWeight={500}>
             The
           </StyledGraphy>
           <Stack direction="row" alignItems="center">
-            <StyledGraphy
-              component="span"
-              variant="h1"
-              fontWeight="medium"
-              position="relative"
-              sx={{ color: "#20b46a" }}
-            >
-              Edu
-            </StyledGraphy>
-            <Box component="img" src={title} sx={{ width: "300px", mt: 1 }} />
+            <Box component="img" src={LogoText} width="450px" />
           </Stack>
           <StyledGraphy variant="h2" fontWeight={500}>
             Way of Success

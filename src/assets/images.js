@@ -1,4 +1,7 @@
 import Logo from "./svgs/logo.svg";
+import LogoDark from "./svgs/logo-dark.svg";
+import LogoText from "./svgs/logo-text.svg";
+import bgHome from "./images/BG-HOME.png";
 import title from "./svgs/niyasa.svg";
 import landingTwo from "./svgs/landing-2.svg";
 import landingThree from "./svgs/landing-3.svg";
@@ -24,7 +27,7 @@ import ausContact from "./images/contact-opera-house.png";
 import caContact from "./images/contact-cn-tower.png";
 import successAnimation from "./lottie/success.json";
 // ############# IMAGES ############# //
-export { landingOne, ca, usa, uk, aus, contact };
+export { landingOne, ca, usa, uk, aus, contact, bgHome };
 // ################## CONTACT PAGE COUNTRIES ################# //
 export { usContact, ukContact, ausContact, caContact };
 // ##################### SVGS ############### //
@@ -39,6 +42,8 @@ export {
   leftHighlight,
   rightHighlight,
   heroSvg,
+  LogoDark,
+  LogoText,
 };
 // ######################## FLAG ################### //
 export { caFlag, usaFlag, ukFlag, ausFlag };

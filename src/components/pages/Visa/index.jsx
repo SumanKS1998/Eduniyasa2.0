@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Box, Grid, Stack } from "@mui/material";
+import { Box, Container, Grid, Stack } from "@mui/material";
 import {
   ausContact,
   caContact,
@@ -60,7 +60,7 @@ const Visa = () => {
       ?.process || [];
 
   return (
-    <Stack minHeight="100vh">
+    <Stack minHeight="100vh" component={Container}>
       <Grid
         container
         spacing={2}
@@ -114,7 +114,7 @@ const Visa = () => {
           <StyledGraphy
             variant="h2"
             component="span"
-            sx={{ color: "#2EE389", fontWeight: 700 }}
+            sx={{ color: "#3f5efb", fontWeight: 700 }}
           >
             Visa
           </StyledGraphy>{" "}
@@ -122,7 +122,7 @@ const Visa = () => {
           <StyledGraphy
             variant="h2"
             component="span"
-            sx={{ color: "#2EE389", fontWeight: 700 }}
+            sx={{ color: "#3f5efb", fontWeight: 700 }}
           >
             Studying Abroad{" "}
             <Box

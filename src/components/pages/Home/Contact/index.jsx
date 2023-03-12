@@ -1,11 +1,13 @@
 import React from "react";
-import { Box, Stack, Button, TextField } from "@mui/material";
+import { Box, Stack, Button, TextField, Container } from "@mui/material";
 import { contact } from "../../../../assets/images";
 import "./index.css";
 import { StyledGraphy } from "../../../../styles/muiStyledComponents";
+import { useNavigate } from "react-router";
 const Contact = () => {
+  const navigate = useNavigate();
   return (
-    <Stack mt={40} mb={10}>
+    <Stack mt={40} mb={10} component={Container}>
       <Stack p={4} borderRadius={4} className="contact-container">
         <Box
           component="img"
@@ -43,6 +45,7 @@ const Contact = () => {
                 color: "#fff",
               },
             }}
+            onClick={() => navigate("/contact")}
           >
             <StyledGraphy>Contact Us</StyledGraphy>
           </Button>

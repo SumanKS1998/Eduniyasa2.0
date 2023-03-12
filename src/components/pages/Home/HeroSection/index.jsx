@@ -1,6 +1,16 @@
-import { Box, Button, Stack, TextField, CircularProgress } from "@mui/material";
+import {
+  Box,
+  Button,
+  Stack,
+  TextField,
+  CircularProgress,
+  Typography,
+} from "@mui/material";
 import { StyledGraphy } from "../../../../styles/muiStyledComponents";
 import {
+  Logo,
+  LogoDark,
+  bgHome,
   landingFour,
   landingOne,
   leftHighlight,
@@ -12,64 +22,12 @@ import { sendEmail } from "../../../../utils/contactMail";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { setSnackBar } from "../../../../redux/appSlice";
+import { useNavigate } from "react-router";
 const HeroSection = () => {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
-  const renderTitle = () => (
-    <StyledGraphy
-      component={Stack}
-      direction="row"
-      alignItems="center"
-      variant="h2"
-      gap={2}
-      fontWeight="medium"
-      position="relative"
-    >
-      Study <Box component="img" src={landingOne} sx={{ width: "200px" }} />{" "}
-      abroad
-      <Box component="img" src={roadmapStar} sx={{ width: "30px" }} />
-    </StyledGraphy>
-  );
-
-  const renderSubTitle = () => (
-    <StyledGraphy
-      component={Stack}
-      direction="row"
-      alignItems="center"
-      variant="h2"
-      gap={2}
-      fontWeight="medium"
-      position="relative"
-    >
-      with{" "}
-      <Stack direction="row" alignItems="center">
-        <StyledGraphy
-          component="span"
-          variant="h1"
-          fontWeight="medium"
-          position="relative"
-          sx={{ color: "#20b46a" }}
-        >
-          Edu
-        </StyledGraphy>
-        <Box component="img" src={title} sx={{ width: "300px", mt: 1 }} />{" "}
-      </Stack>
-      <Box component="img" src={landingFour} sx={{ width: "300px" }} />{" "}
-    </StyledGraphy>
-  );
-
-  const renderDescription = () => (
-    <StyledGraphy
-      variant="h6"
-      fontWeight="light"
-      width="50%"
-      textAlign="center"
-    >
-      We are building a community with high expectations and high academic
-      achievement.
-    </StyledGraphy>
-  );
+  const navigation = useNavigate();
   const snackResponse = (message, severity) => {
     dispatch(
       setSnackBar({
@@ -90,55 +48,55 @@ const HeroSection = () => {
     }
     setLoading(false);
   };
-  const renderForm = () => (
-    <Stack direction="row" gap={2} alignItems="center">
-      <Box component="img" src={leftHighlight} sx={{ width: "40px" }} />
-      <TextField
-        label={"Enter your email address to connect"}
-        sx={{ width: "400px" }}
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <Button
-        onClick={() => {
-          if (!email) {
-            snackResponse("Please enter your email address", "error");
-            return;
-          }
-          sendEmailHandler();
-        }}
-        variant="contained"
-        sx={{
-          bgcolor: "#2ee389",
-          color: "#fff",
-          boxShadow: "none",
-          px: 4,
-          py: 2,
-          textTransform: "none",
-          "&:hover": {
-            bgcolor: "#000",
-            color: "#fff",
-          },
-        }}
-        disabled={loading}
-      >
-        {loading ? (
-          <CircularProgress size={30} />
-        ) : (
-          <StyledGraphy>Submit</StyledGraphy>
-        )}
-      </Button>
-      <Box component="img" src={rightHighlight} sx={{ width: "40px" }} />
-    </Stack>
-  );
-
+  
   return (
-    <Stack height="90vh" justifyContent="center" className="hero-section">
-      <Stack gap={4} alignItems="center" justifyContent="center">
-        {renderTitle()}
-        {renderSubTitle()}
-        {renderDescription()}
-        {renderForm()}
+    <Stack
+      height="100vh"
+      justifyContent="center"
+      className="hero-section"
+      bgcolor="#222222"
+      mt={-8}
+      overflow="hidden"
+    >
+      <Stack
+        gap={4}
+        alignItems="center"
+        justifyContent="center"
+        position="relative"
+      >
+        <Stack
+          alignItems="center"
+          gap={2}
+          sx={{ zIndex: 2, position: "relative" }}
+        >
+          <StyledGraphy fontWeight={700} variant="h2" sx={{ color: "#fff" }}>
+            Study Abroad with
+          </StyledGraphy>
+
+          <Box component="img" src={LogoDark} width="550px" />
+          <Stack alignItems="center" sx={{ width: "60%" }} my={3}>
+            <StyledGraphy
+              fontWeight={500}
+              textAlign="center"
+              variant="h6"
+              sx={{ color: "#fff" }}
+            >
+              We are building a community with high expectations and high
+              academic achievement.
+            </StyledGraphy>
+          </Stack>
+          <Button className="home-btn" onClick={() => navigation("/contact")}>
+            Get Started
+          </Button>
+        </Stack>
+        <Box
+          component="img"
+          src={bgHome}
+          width="100%"
+          position="absolute"
+          top={"%"}
+          className="bg-home"
+        />
       </Stack>
     </Stack>
   );

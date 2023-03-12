@@ -127,7 +127,7 @@ const Scholarship = () => {
   };
 
   return (
-    <>
+    <Container>
       <ScholarshipModal doc={doc} setOpen={setOpen} open={open} />
       <Toolbar sx={{ display: { xs: "none", md: "block" } }} />
       <Container>
@@ -156,7 +156,7 @@ const Scholarship = () => {
           }}
         ></Box>
       </Container>
-    </>
+    </Container>
   );
 };
 
