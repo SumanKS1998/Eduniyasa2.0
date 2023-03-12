@@ -1,4 +1,4 @@
-import { Box, Button, Stack } from "@mui/material";
+import { Box, Button, Container, Stack } from "@mui/material";
 import React, { useState } from "react";
 import {
   PrimaryButtonStyles,
@@ -6,10 +6,11 @@ import {
 } from "../../../../styles/muiStyledComponents";
 import { aus, landingStar, uk, usa } from "../../../../assets/images";
 import "./index.css";
+import { useNavigate } from "react-router";
 
 const Scholarships = () => {
   const [isVisible, setIsVisible] = useState(false);
-
+const navigate=useNavigate()
   return (
     <Stack
       direction={{ xs: "column", md: "row" }}
@@ -19,7 +20,7 @@ const Scholarships = () => {
       justifyContent="space-between"
       p={3}
       onMouseOver={() => setIsVisible(true)}
-      onMouseLeave={() => setIsVisible(false)}
+      component={Container}
     >
       <Stack width={{ xs: "100%", md: "50%" }}>
         <StyledGraphy variant="h4" sx={{ color: "#000", fontWeight: 500 }}>
@@ -27,7 +28,7 @@ const Scholarships = () => {
           <StyledGraphy
             variant="h1"
             component="span"
-            sx={{ color: "#20b46a", fontWeight: 500, display: "block" }}
+            sx={{ color: "#3f5efb", fontWeight: 500, display: "block" }}
           >
             Country
           </StyledGraphy>
@@ -39,7 +40,7 @@ const Scholarships = () => {
             Your Academic Dreams and Career Goals.
           </StyledGraphy>
           <Stack direction="row" gap={2}>
-            <Button sx={{ ...PrimaryButtonStyles, py: 2 }}>
+            <Button sx={{ ...PrimaryButtonStyles, py: 2 }} onClick={()=>navigate('/scholarship')}>
               <StyledGraphy variant="h6">Enquire Now</StyledGraphy>
             </Button>
             <Box component="img" src={landingStar} sx={{ width: "30px" }} />

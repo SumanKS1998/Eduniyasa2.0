@@ -99,7 +99,7 @@ const CountrySelector = () => {
       <Button
         variant="contained"
         sx={{
-          bgcolor: "#2EE389",
+          bgcolor: "#3f5efb",
           textTransform: "inherit",
           padding: "0.5em 3em",
           mt: 5,

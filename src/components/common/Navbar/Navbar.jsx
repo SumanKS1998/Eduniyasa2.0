@@ -13,7 +13,7 @@ import {
   Toolbar,
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import { Logo } from "../../../assets/images";
+import { Logo, LogoDark } from "../../../assets/images";
 import { StyledGraphy } from "../../../styles/muiStyledComponents";
 import { useNavigate } from "react-router";
 import {
@@ -50,9 +50,11 @@ const Navbar = () => {
     },
   ];
   const navigate = useNavigate();
-  console.log(scrollPos);
-  return (
-    <AppBar className={scrollPos > 50 ? "navbar-scrolled" : "navbar"}>
+   return (
+    <AppBar
+      position="fixed"
+      className={scrollPos > 50 ? "navbar-scrolled" : "navbar"}
+    >
       <Toolbar>
         <Stack
           component={Container}
@@ -64,11 +66,11 @@ const Navbar = () => {
           <Box
             sx={{
               //   height: "auto",
-              width: "140px",
+              width: "200px",
               objectFit: "contain",
             }}
             component="img"
-            src={Logo}
+            src={scrollPos > 50 ?Logo:LogoDark}
           />
           <Stack
             component={List}
@@ -82,7 +84,7 @@ const Navbar = () => {
                   <ListItemButton
                     onClick={() => navigate(item.path)}
                     sx={{
-                      color: "#000",
+                      color:scrollPos > 50?"#000": "#fff",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
@@ -99,8 +101,8 @@ const Navbar = () => {
           <Button
             sx={{
               textTransform: "inherit",
-              border: "1px solid #2ee389",
-              color: "#2ee389",
+              border: "1px solid #3f5efb",
+              color: "#3f5efb",
               borderRadius: 2.5,
               px: 2,
               py: 1.5,
@@ -127,7 +129,7 @@ const Navbar = () => {
             src={Logo}
           />
           <IconButton onClick={() => setOpen(true)}>
-            <Menu sx={{ color: "#2ee389" }} />
+            <Menu sx={{ color: "#3f5efb" }} />
           </IconButton>
 
           <Drawer open={open} onClose={() => setOpen(false)} anchor="right">

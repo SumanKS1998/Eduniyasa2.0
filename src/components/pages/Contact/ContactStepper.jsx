@@ -26,12 +26,12 @@ export default function ContactStepper() {
     },
     [`&.${stepConnectorClasses.active}`]: {
       [`& .${stepConnectorClasses.line}`]: {
-        borderColor: "#2EE389",
+        borderColor: "#3f5efb",
       },
     },
     [`&.${stepConnectorClasses.completed}`]: {
       [`& .${stepConnectorClasses.line}`]: {
-        borderColor: "#2EE389",
+        borderColor: "#3f5efb",
       },
     },
     [`& .${stepConnectorClasses.line}`]: {
@@ -47,10 +47,10 @@ export default function ContactStepper() {
     height: 22,
     alignItems: "center",
     ...(ownerState.active && {
-      color: "#2EE389",
+      color: "#3f5efb",
     }),
     "& .QontoStepIcon-completedIcon": {
-      color: "#2EE389",
+      color: "#3f5efb",
       zIndex: 1,
       fontSize: 18,
     },

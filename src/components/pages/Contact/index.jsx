@@ -24,8 +24,7 @@ import { setStepperValue } from "../../../redux/formSlice";
 import { useDispatch } from "react-redux";
 const Contact = () => {
   const { stepValue } = useSelector((state) => state.form);
-
-  return (
+   return (
     <Stack
       component={Container}
       my={{ xs: 1, md: 3 }}
@@ -40,7 +39,7 @@ const Contact = () => {
             fontWeight="bold"
             variant="h3"
             // className="contact-title"
-            sx={{color:'#2EE389'}}
+            sx={{ color: "#3f5efb" }}
           >
             expert
           </StyledGraphy>{" "}

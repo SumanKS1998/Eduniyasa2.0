@@ -26,19 +26,18 @@ function App() {
     <Provider store={store}>
       <ThemeProvider theme={theme}>
         <Stack position="relative">
-          <Container>
-            <AppSnackBar />
-            <Router>
-              <Navbar />
-              <Toolbar />
-              <Routes>
-                <Route exact path="/" element={<Home />} />
-                <Route exact path="/contact" element={<Contact />} />
-                <Route exact path="/scholarship" element={<Scholarship />} />
-                <Route exact path="/visa" element={<Visa />} />
-              </Routes>
-            </Router>
-          </Container>
+          <AppSnackBar />
+          <Router>
+            <Navbar />
+            <Toolbar />
+            <Routes>
+              <Route exact path="/" element={<Home />} />
+              <Route exact path="/contact" element={<Contact />} />
+              <Route exact path="/scholarship" element={<Scholarship />} />
+              <Route exact path="/visa" element={<Visa />} />
+            </Routes>
+          </Router>
+
           <Footer />
         </Stack>
       </ThemeProvider>

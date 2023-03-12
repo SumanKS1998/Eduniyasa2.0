@@ -7,7 +7,7 @@ const RoadmapItem = ({ index, title, description, xs, sm, md, height }) => {
       <Stack
         height={height}
         gap={2}
-        sx={{ border: "1px solid #2ee389" }}
+        sx={{ border: "1px solid #3f5efb" }}
         p={2}
         borderRadius={3}
         className="container"
@@ -25,7 +25,7 @@ const RoadmapItem = ({ index, title, description, xs, sm, md, height }) => {
 };
 export default RoadmapItem;
 const stepSx = {
-  border: "1px solid #2ee389",
+  border: "1px solid #3f5efb",
   p: 3,
   width: "50px",
   height: "50px",
@@ -33,7 +33,7 @@ const stepSx = {
   alignItems: "center",
   justifyContent: "center",
   fontWeight: 700,
-  color: "#2ee389",
+  color: "#3f5efb",
   bgcolor: "#20b46a0d",
   borderRadius: 2,
 };

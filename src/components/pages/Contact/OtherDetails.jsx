@@ -98,19 +98,19 @@ const OtherDetails = () => {
 
 export default OtherDetails;
 const outlinedBtn = {
-  border: "1px solid #2EE389",
-  color: "#2EE389",
+  border: "1px solid #3f5efb",
+  color: "#3f5efb",
   textTransform: "inherit",
   padding: "0.5em 2em",
 
   "&:hover": {
-    bgcolor: "#2EE389",
-    border: "1px solid #2EE389",
+    bgcolor: "#3f5efb",
+    border: "1px solid #3f5efb",
     color: "#fff",
   },
 };
 const containedBtn = {
-  bgcolor: "#2EE389",
+  bgcolor: "#3f5efb",
   textTransform: "inherit",
 
   "&:hover": {

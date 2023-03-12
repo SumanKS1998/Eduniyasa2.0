@@ -1,6 +1,6 @@
 .container:hover .number-container,
 .container:hover {
-  background-color: #2ee389 !important;
+  background-color: #3f5efb !important;
   cursor: pointer !important;
   color: #fff !important;
   transition: all 200ms ease-in-out;

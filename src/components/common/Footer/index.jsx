@@ -117,7 +117,7 @@ export default function Footer() {
                 }}
                 variant="contained"
                 sx={{
-                  bgcolor: "#2ee389",
+                  bgcolor: "#3f5efb",
                   color: "#fff",
                   boxShadow: "none",
                   px: 4,
