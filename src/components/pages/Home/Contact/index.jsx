@@ -21,7 +21,7 @@ const Contact = () => {
           <Box
             component="img"
             src={contact}
-            width="40%"
+            width="70%"
             className={userHere ? "contact-image" : "contact-image-inactive"}
           />
           <Stack gap={2} width="50%">

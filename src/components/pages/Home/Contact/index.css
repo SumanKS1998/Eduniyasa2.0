@@ -1,5 +1,12 @@
 .contact-container {
-  background-image: linear-gradient(to bottom, #ffffff00, #dad4ff, #b2abff, #8484fe, #3f5efb);
+  background-image: linear-gradient(
+    to bottom,
+    #ffffff00,
+    #dad4ff,
+    #b2abff,
+    #8484fe,
+    #3f5efb
+  );
   position: relative;
   height: 50vh;
   border-radius: none !important;
@@ -11,9 +18,7 @@
   animation: moveUp 0.5s ease-in-out forwards;
 }
 .contact-image-inactive {
-  position: absolute;
-  right: 0;
-  bottom: -400px;
+  display: none;
 }
 @keyframes moveUp {
   from {
