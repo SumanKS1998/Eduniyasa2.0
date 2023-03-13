@@ -1,4 +1,5 @@
 import Logo from "./svgs/logo.svg";
+import LogoIcon from "./svgs/logo-icon.svg";
 import LogoDark from "./svgs/logo-dark.svg";
 import LogoText from "./svgs/logo-text.svg";
 import bgHome from "./images/BG-HOME.png";
@@ -44,6 +45,7 @@ export {
   heroSvg,
   LogoDark,
   LogoText,
+  LogoIcon,
 };
 // ######################## FLAG ################### //
 export { caFlag, usaFlag, ukFlag, ausFlag };

@@ -8,7 +8,6 @@ import {
 } from "@mui/material";
 import { StyledGraphy } from "../../../../styles/muiStyledComponents";
 import {
-  Logo,
   LogoDark,
   bgHome,
   landingFour,
@@ -23,32 +22,14 @@ import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { setSnackBar } from "../../../../redux/appSlice";
 import { useNavigate } from "react-router";
+import Logo from "../../../common/Logo";
 const HeroSection = () => {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
+  const [btnClass, setBtnClass] = useState("home-btn");
   const dispatch = useDispatch();
   const navigation = useNavigate();
-  const snackResponse = (message, severity) => {
-    dispatch(
-      setSnackBar({
-        open: true,
-        message,
-        severity,
-      })
-    );
-  };
-  const sendEmailHandler = async () => {
-    const result = await sendEmail(email);
-    setLoading(true);
-    if (result.status) {
-      snackResponse(result.message, "success");
-      setEmail("");
-    } else {
-      snackResponse(result.message, "error");
-    }
-    setLoading(false);
-  };
-  
+ 
   return (
     <Stack
       height="100vh"
@@ -73,7 +54,7 @@ const HeroSection = () => {
             Study Abroad with
           </StyledGraphy>
 
-          <Box component="img" src={LogoDark} width="550px" />
+          <Logo color="#fff" />
           <Stack alignItems="center" sx={{ width: "60%" }} my={3}>
             <StyledGraphy
               fontWeight={500}
@@ -85,7 +66,13 @@ const HeroSection = () => {
               academic achievement.
             </StyledGraphy>
           </Stack>
-          <Button className="home-btn" onClick={() => navigation("/contact")}>
+          <Button
+            sx={{ mt: 3 }}
+            className={btnClass}
+            onMouseOver={() => setBtnClass("home-btn-hover")}
+            onMouseLeave={() => setBtnClass("home-btn")}
+            onClick={() => navigation("/contact")}
+          >
             Get Started
           </Button>
         </Stack>

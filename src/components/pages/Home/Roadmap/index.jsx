@@ -4,39 +4,40 @@ import { StyledGraphy } from "../../../../styles/muiStyledComponents";
 import { LogoText, roadmapStar } from "../../../../assets/images";
 import "./index.css";
 import RoadmapItem from "../../../common/Roadmap";
+import Logo from "../../../common/Logo";
 
 const Roadmap = () => {
   return (
-    <Stack height="100vh" component={Container}>
-      <Grid container spacing={2}>
-        <Grid item xs={12} md={6}>
-          <StyledGraphy variant="h2" fontWeight={500}>
-            The
-          </StyledGraphy>
-          <Stack direction="row" alignItems="center">
-            <Box component="img" src={LogoText} width="450px" />
-          </Stack>
-          <StyledGraphy variant="h2" fontWeight={500}>
-            Way of Success
-            <Box
-              component="img"
-              src={roadmapStar}
-              sx={{ width: "50px", ml: 1 }}
+    <Stack justifyContent="center" minHeight="100vh" bgcolor="#222222">
+      <Stack height="100%" component={Container} py={5}>
+        <Grid container spacing={2}>
+          <Grid item xs={12} md={6}>
+            <StyledGraphy variant="h2" sx={{ color: "#ffff" }} fontWeight={700}>
+              The
+            </StyledGraphy>
+            <Stack direction="row" alignItems="center">
+              <Logo color="#ffff" />
+            </Stack>
+            <StyledGraphy variant="h2" sx={{ color: "#ffff" }} fontWeight={700}>
+              Way of Success
+            </StyledGraphy>
+            <StyledGraphy variant="h6" sx={{ color: "#ffff", mt: 4 }}>
+              From planning to departure: your study abroad roadmap 🗺️
+            </StyledGraphy>
+          </Grid>
+          {roadmap.map((item, index) => (
+            <RoadmapItem
+              index={index + 1}
+              title={item.title}
+              description={item.description}
+              xs={12}
+              sm={6}
+              md={3}
+              height={300}
             />
-          </StyledGraphy>
+          ))}
         </Grid>
-        {roadmap.map((item, index) => (
-          <RoadmapItem
-            index={index + 1}
-            title={item.title}
-            description={item.description}
-            xs={12}
-            sm={6}
-            md={3}
-            height={300}
-          />
-        ))}
-      </Grid>
+      </Stack>
     </Stack>
   );
 };
