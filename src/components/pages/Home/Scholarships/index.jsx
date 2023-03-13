@@ -26,11 +26,11 @@ const navigate=useNavigate()
         <StyledGraphy variant="h4" sx={{ color: "#000", fontWeight: 500 }}>
           Scholarships by
           <StyledGraphy
-            variant="h1"
+            variant="h2"
             component="span"
-            sx={{ color: "#3f5efb", fontWeight: 500, display: "block" }}
+            sx={{ color: "#3f5efb", fontWeight: 700, display: "block" }}
           >
-            Country
+            Country 🌎
           </StyledGraphy>
         </StyledGraphy>
         <Stack mt={2} gap={3}>

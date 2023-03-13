@@ -50,7 +50,7 @@ const Navbar = () => {
     },
   ];
   const navigate = useNavigate();
-   return (
+  return (
     <AppBar
       position="fixed"
       className={scrollPos > 50 ? "navbar-scrolled" : "navbar"}
@@ -70,7 +70,7 @@ const Navbar = () => {
               objectFit: "contain",
             }}
             component="img"
-            src={scrollPos > 50 ?Logo:LogoDark}
+            src={LogoDark}
           />
           <Stack
             component={List}
@@ -84,15 +84,29 @@ const Navbar = () => {
                   <ListItemButton
                     onClick={() => navigate(item.path)}
                     sx={{
-                      color:scrollPos > 50?"#000": "#fff",
+                      color: "#fff",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
                       borderRadius: 2,
+                      "&:hover": {
+                        bgcolor: scrollPos > 50 ? "" : "#3F5EFB",
+                      },
                     }}
                     key={item.routeName}
                   >
-                    <StyledGraphy>{item.routeName}</StyledGraphy>
+                    <StyledGraphy
+                      sx={{
+                        fontSize: "18px",
+                        fontWeight:
+                          window.location.pathname === item.path
+                            ? "bold"
+                            : "light",
+                       
+                      }}
+                    >
+                      {item.routeName}
+                    </StyledGraphy>
                   </ListItemButton>
                 );
               })}
@@ -103,9 +117,13 @@ const Navbar = () => {
               textTransform: "inherit",
               border: "1px solid #3f5efb",
               color: "#3f5efb",
-              borderRadius: 2.5,
+              borderRadius: 100,
               px: 2,
               py: 1.5,
+              "&:hover": {
+                bgcolor: "#3f5efb",
+                color: "#fff",
+              },
             }}
             onClick={() => navigate("/contact")}
           >

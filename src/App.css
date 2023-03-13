@@ -12,9 +12,12 @@ body {
 }
 .navbar-scrolled {
   box-shadow: none !important;
-  background-color: #ffffff6b !important;
-  backdrop-filter: blur(10px) !important;
-  border: 1px solid #e5e5e5 !important;
+  background-color: #222222a6 !important;
+  backdrop-filter: blur(20px) !important;
+  border: 1px solid #4a4a4a !important;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
 }
 .hero-section {
   animation: slide-in 1s ease-out forwards;
@@ -54,13 +57,18 @@ body {
     transform: rotate(360deg);
   }
 }
-.home-btn {
+.home-btn,
+.home-btn-hover {
   text-transform: inherit !important;
   font-weight: 700 !important;
   font-family: "Poppins", sans-serif !important;
-  font-size: 2.2rem !important;
+  font-size: 2rem !important;
   background-color: #fff !important;
   color: #222222 !important;
   border-radius: 100vmax !important;
   padding: 0.5em 2em !important;
+}
+.home-btn-hover {
+  background-color: #3f5efb !important;
+  color: #fff !important;
 }

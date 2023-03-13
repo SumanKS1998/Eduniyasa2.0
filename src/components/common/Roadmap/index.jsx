@@ -15,10 +15,15 @@ const RoadmapItem = ({ index, title, description, xs, sm, md, height }) => {
         <StyledGraphy sx={stepSx} variant="h2" className="number-container">
           {index}
         </StyledGraphy>
-        <StyledGraphy fontWeight={500} variant="h5">
+        <StyledGraphy fontWeight={500} variant="h5" sx={{ color: "#fff" }}>
           {title}
         </StyledGraphy>
-        <StyledGraphy variant="body1">{description}</StyledGraphy>
+        <StyledGraphy
+          variant="body1"
+          sx={{ color: "#e5e5e5", fontWeight: "light" }}
+        >
+          {description}
+        </StyledGraphy>
       </Stack>
     </Grid>
   );

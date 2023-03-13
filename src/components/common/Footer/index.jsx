@@ -13,13 +13,13 @@ import GoogleIcon from "@mui/icons-material/Google";
 import styled from "@emotion/styled";
 import { Divider, List, ListItem, Stack } from "@mui/material";
 import { StyledGraphy } from "../../../styles/muiStyledComponents";
-import { Logo } from "../../../assets/images";
 import { Facebook, Instagram, WhatsApp } from "@mui/icons-material";
 import moment from "moment/moment";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { setSnackBar } from "../../../redux/appSlice";
 import { sendEmail } from "../../../utils/contactMail";
+import Logo from "../Logo";
 export default function Footer() {
   const [email, setEmail] = useState("");
   const dispatch = useDispatch();
@@ -45,9 +45,10 @@ export default function Footer() {
   return (
     <Stack
       sx={{
-        bgcolor: "#fff",
+        bgcolor: "#222222",
+        position: "relative",
+        zIndex: 999,
       }}
-      mt={4}
     >
       <Stack
         sx={{
@@ -66,7 +67,7 @@ export default function Footer() {
           gap={2}
         >
           <Stack sx={{ width: "33%" }} alignItems="center">
-            <Box component="img" src={Logo} width="250px" />
+            <Logo color="#fff" width="250px" variant="h4" />
           </Stack>
 
           <Stack
@@ -95,51 +96,20 @@ export default function Footer() {
               <WhatsApp sx={{ color: "#48c257 ", fontSize: "32px" }} />
             </Link>
           </Stack>
-          <Stack gap={2} sx={{ width: "33%" }}>
+          <Stack gap={2} sx={{ width: "33%", color: "#fff" }}>
             <StyledGraphy>
               Contact us to start your study abroad journey today!
             </StyledGraphy>
-            <Stack direction="row" gap={2}>
-              <TextField
-                label={"Enter your email"}
-                sx={{ width: "300px" }}
-                size="small"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-              <Button
-                onClick={() => {
-                  if (!email) {
-                    snackResponse("Please enter your email address", "error");
-                    return;
-                  }
-                  sendEmailHandler();
-                }}
-                variant="contained"
-                sx={{
-                  bgcolor: "#3f5efb",
-                  color: "#fff",
-                  boxShadow: "none",
-                  px: 4,
-                  textTransform: "none",
-                  "&:hover": {
-                    bgcolor: "#000",
-                    color: "#fff",
-                  },
-                }}
-              >
-                <StyledGraphy>Submit</StyledGraphy>
-              </Button>
-            </Stack>
           </Stack>
         </Stack>
       </Stack>
-      <Divider />
+      <Divider sx={{ border: "1px solid #e6e6e6", borderBottom: "none" }} />
       <StyledGraphy
         textAlign="center"
         my={2}
         variant="body2"
         fontWeight="light"
+        sx={{ color: "#f3f3f3" }}
       >
         Copyright © {moment(new Date()).format("YYYY")}, All right reserved.
       </StyledGraphy>
